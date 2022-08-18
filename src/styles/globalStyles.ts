@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -16,7 +16,13 @@ export const GlobalStyle = createGlobalStyle`
   body { 
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: ${(props) => props.theme.background}
+    background-color: ${(props) => props.theme.background};
+    font-family: 'Roboto', sans-serif;
+  }
+
+  :focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${(props) => props.theme.purple}
   }
 
   img, picture, video, canvas, svg { 
@@ -26,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 
   input, button, textarea, select {
     font: inherit;
+    cursor: pointer;
   }
 
   p, h1, h2, h3, h4, h5, h6 {
@@ -35,4 +42,4 @@ export const GlobalStyle = createGlobalStyle`
   #root, #__next {
     isolation: isolate;
   }
-`;
+`
