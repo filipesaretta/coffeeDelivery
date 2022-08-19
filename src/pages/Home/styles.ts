@@ -1,13 +1,11 @@
 import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
-  max-width: 1120px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr max-content;
   align-items: center;
   gap: 3.5rem;
-  margin-top: 5.875rem;
+  margin-top: 3.875rem;
 
   img {
     max-width: 100%;
@@ -72,4 +70,10 @@ export const Features = styled.div`
       background: ${(props) => props.theme.purple};
     }
   }
+`
+
+export const Catalog = styled.div`
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
 `

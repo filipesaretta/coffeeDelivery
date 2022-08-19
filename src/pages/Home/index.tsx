@@ -1,13 +1,12 @@
-import { Header } from '../../components/Header'
-import { Features, HomeContainer, HomeDetails, Title } from './styles'
+import { Catalog, Features, HomeContainer, HomeDetails, Title } from './styles'
 
 import coffeMainImage from '../../assets/img/cofee-image-home.png'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
+import { Card } from '../../components/Card'
 
 export function Home() {
   return (
     <>
-      <Header />
       <HomeContainer>
         <HomeDetails>
           <Title>
@@ -49,6 +48,12 @@ export function Home() {
           alt="A cup of coffee with some beans of coffee around it"
         />
       </HomeContainer>
+      <Catalog>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </Catalog>
     </>
   )
 }

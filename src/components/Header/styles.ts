@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  max-width: 1120px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,7 +13,7 @@ export const MapCartContainer = styled.div`
   height: 38px;
 `
 
-const button = styled.button`
+export const button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
