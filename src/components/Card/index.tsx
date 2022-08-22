@@ -7,29 +7,46 @@ import {
   Tag,
   AddToCart,
   Cart,
+  TagContainer,
 } from './styles'
-import coffe1 from '../../assets/img/americano.png'
+
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 
-export function Card() {
+interface CoffeeItemsProps {
+  items: {
+    name: string
+    description: string
+    image: string
+    price: string
+    tags: string[]
+  }
+}
+
+export function Card({
+  items: { name, description, image, price, tags },
+}: CoffeeItemsProps) {
   return (
     <CardContainer>
       <CoffeeDiv>
-        <img src={coffe1} alt="" />
-        <Tag>Tradicional</Tag>
+        <img src={image} alt="" />
+        <TagContainer>
+          {tags.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
+        </TagContainer>
       </CoffeeDiv>
       <CoffeeTitle>
-        <h2>Expresso Tradicional</h2>
-        <p>O tradicional café feito com água quente e grãos moídos</p>
+        <h2>{name}</h2>
+        <p>{description}</p>
       </CoffeeTitle>
       <BuySection>
         <p>
-          R$ <span>9,90</span>
+          R$ <span>{price}</span>
         </p>
         <AddToCart>
           <CounterCoffee>
             <Minus weight="bold" size={14} />
-            <span>1</span>
+            <span>{0}</span>
             <Plus weight="bold" size={14} />
           </CounterCoffee>
 

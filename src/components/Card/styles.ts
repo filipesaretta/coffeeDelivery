@@ -16,14 +16,21 @@ export const CardContainer = styled.div`
 `
 
 export const CoffeeDiv = styled.div`
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  display: grid;
+  /* gap: 0.5rem; */
+  justify-items: center;
 
   img {
+    justify-self: center;
     margin-top: -1.25rem;
   }
+`
+export const TagContainer = styled.div`
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 `
 export const Tag = styled.button`
   border-radius: 100px;
