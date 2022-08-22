@@ -3,6 +3,7 @@ import { Catalog, Features, HomeContainer, HomeDetails, Title } from './styles'
 import coffeMainImage from '../../assets/img/cofee-image-home.png'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { Card } from '../../components/Card'
+import coffee from '../../data/coffee'
 
 export function Home() {
   return (
@@ -49,10 +50,9 @@ export function Home() {
         />
       </HomeContainer>
       <Catalog>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {coffee.map((item) => (
+          <Card items={item} key={item.id} />
+        ))}
       </Catalog>
     </>
   )

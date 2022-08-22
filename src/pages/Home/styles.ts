@@ -74,6 +74,9 @@ export const Features = styled.div`
 
 export const Catalog = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   padding: 2rem 0;
 `
