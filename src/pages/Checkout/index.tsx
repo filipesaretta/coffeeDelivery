@@ -3,24 +3,16 @@ import {
   CreditCard,
   CurrencyDollar,
   MapPinLine,
-  Minus,
   Money,
-  Plus,
-  Trash,
 } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
+import { OrderSummaryCard } from '../../components/OrderSummaryCard'
 import {
-  AddorRemoveItem,
-  OrderSummary,
-  CartContainer,
-  CartItems,
-  CartSize,
   Form,
   FormAdress,
   FormContainer,
   FormPayment,
   PaymentSelection,
-  Price,
   Title,
 } from './styles'
 
@@ -111,46 +103,7 @@ export function Checkout() {
             </PaymentSelection>
           </FormPayment>
 
-          <CartContainer>
-            <CartItems>
-              <img src="/src/assets/img/americano.png" alt="" />
-
-              <AddorRemoveItem>
-                <p>Café Americano</p>
-                <CartSize>
-                  <div>
-                    <Minus weight="bold" size={14} />
-                    <span>{0}</span>
-                    <Plus weight="bold" size={14} />
-                  </div>
-                  <div>
-                    <Trash size={14} weight="regular" />
-                    <span>Remover</span>
-                  </div>
-                </CartSize>
-              </AddorRemoveItem>
-              <Price>R$ 9,90</Price>
-            </CartItems>
-            <OrderSummary>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Total de itens</th>
-                    <th>Entrega</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>R$ 9,50</td>
-                    <td>R$ 3,50</td>
-                    <td>R$ 13,00</td>
-                  </tr>
-                </tbody>
-              </table>
-              <button>confirmar pedido</button>
-            </OrderSummary>
-          </CartContainer>
+          <OrderSummaryCard />
 
           {/* <input type="submit" /> */}
         </Form>

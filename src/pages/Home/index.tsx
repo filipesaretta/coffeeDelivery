@@ -2,8 +2,8 @@ import { Catalog, Features, HomeContainer, HomeDetails, Title } from './styles'
 
 import coffeMainImage from '../../assets/img/cofee-image-home.png'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import { Card } from '../../components/Card'
-import coffee from '../../data/coffee'
+import { CardItem } from '../../components/CardItem'
+import storeItems from '../../data/storeItems.json'
 
 export function Home() {
   return (
@@ -50,8 +50,10 @@ export function Home() {
         />
       </HomeContainer>
       <Catalog>
-        {coffee.map((item) => (
-          <Card items={item} key={item.id} />
+        {storeItems.map((item) => (
+          <div key={item.id}>
+            <CardItem {...item} />
+          </div>
         ))}
       </Catalog>
     </>
