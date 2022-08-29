@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -32,7 +33,15 @@ export const Location = styled(button)`
     font-size: 0.875rem;
   }
 `
-export const Cart = styled(button)`
+export const Cart = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  border-radius: 8px;
+  border: none;
+
   background-color: ${(props) => props.theme['yellow-light']};
   color: ${(props) => props.theme['yellow-dark']};
 `
