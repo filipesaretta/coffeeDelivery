@@ -14,26 +14,23 @@ import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 interface CoffeeItemsProps {
-  id: number
-  name: string
-  description: string
-  image: string
-  price: string
-  tags: string[]
+  items: {
+    id: number
+    name: string
+    description: string
+    image: string
+    price: number
+    tags: string[]
+  }
 }
 
 export function CardItem({
-  id,
-  name,
-  description,
-  image,
-  price,
-  tags,
+  items: { id, name, description, image, price, tags },
 }: CoffeeItemsProps) {
-  const { cartSize, decreaseItemsQuantity, increaseItemsQuantity } =
+  const { getItemQuantity, decreaseItemsQuantity, increaseItemsQuantity } =
     useShoppingCartContext()
 
-  const quantity = cartSize(id)
+  const quantity = getItemQuantity(id)
   return (
     <CardContainer>
       <CoffeeDiv>
