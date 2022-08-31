@@ -50,7 +50,7 @@ export function CartItems({ id, quantity }: CartItemsProps) {
                 </button>
               </Quantity>
             </Items>
-            <Price>{moneyFormatter(item.price)}</Price>
+            <Price>{moneyFormatter(Number(item.price) * quantity)}</Price>
           </CartItemsContainer>
         ))}
     </>
