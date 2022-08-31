@@ -6,6 +6,7 @@ import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 export function Header() {
   const { cartSize } = useShoppingCartContext()
+  console.log(cartSize())
   return (
     <HeaderContainer>
       <div>
@@ -17,7 +18,7 @@ export function Header() {
           <span>Torino, TO</span>
         </Location>
         <>
-          <Cart to="/checkout">
+          <Cart to={cartSize() !== 0 ? '/checkout' : '/'}>
             <ShoppingCart size={25} weight="fill" />
             <span>{cartSize()}</span>
           </Cart>
