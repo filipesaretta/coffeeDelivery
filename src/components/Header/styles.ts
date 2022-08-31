@@ -44,4 +44,21 @@ export const Cart = styled(Link)`
 
   background-color: ${(props) => props.theme['yellow-light']};
   color: ${(props) => props.theme['yellow-dark']};
+
+  position: relative;
+  span {
+    position: absolute;
+    background: ${(props) => props.theme['yellow-dark']};
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    right: -0.5rem;
+    top: -0.5rem;
+  }
 `
