@@ -1,35 +1,17 @@
-import { Minus, Plus, Trash } from 'phosphor-react'
-import {
-  Items,
-  ItemsContainer,
-  OrderSummary,
-  OrderSummaryContainer,
-  Price,
-  Quantity,
-} from './styles'
+import { OrderSummary, OrderSummaryContainer } from './styles'
+
+import { CartItems } from '../CartItems'
+import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 export function OrderSummaryCard() {
+  const { cartItems } = useShoppingCartContext()
+
   return (
     <OrderSummaryContainer>
-      <ItemsContainer>
-        <img src="/src/assets/img/americano.png" alt="" />
+      {cartItems.map((item) => {
+        return <CartItems {...item} key={item.id} />
+      })}
 
-        <Items>
-          <p>Café Americano</p>
-          <Quantity>
-            <div>
-              <Minus weight="bold" size={14} />
-              <span>{0}</span>
-              <Plus weight="bold" size={14} />
-            </div>
-            <div>
-              <Trash size={14} weight="regular" />
-              <span>Remover</span>
-            </div>
-          </Quantity>
-        </Items>
-        <Price>R$ 9,90</Price>
-      </ItemsContainer>
       <OrderSummary>
         <table>
           <thead>
