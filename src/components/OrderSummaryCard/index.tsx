@@ -1,4 +1,4 @@
-import { OrderSummary, OrderSummaryContainer } from './styles'
+import { ConfirmButton, OrderSummary, OrderSummaryContainer } from './styles'
 
 import { CartItems } from '../CartItems'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
@@ -39,7 +39,7 @@ export function OrderSummaryCard() {
             </tr>
           </tbody>
         </table>
-        <button>confirmar pedido</button>
+        <ConfirmButton>confirmar pedido</ConfirmButton>
       </OrderSummary>
     </OrderSummaryContainer>
   )

@@ -48,22 +48,23 @@ export const OrderSummary = styled.div`
       }
     }
   }
-  button {
-    padding: 0.75rem 0;
-    background: ${(props) => props.theme.yellow};
+`
 
-    font-size: 0.875rem;
-    font-weight: bold;
+export const ConfirmButton = styled.button`
+  padding: 0.75rem 0;
+  background: ${(props) => props.theme.yellow};
 
-    border: none;
-    border-radius: 6px;
-    color: white;
-    text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
 
-    transition: background ease 300ms;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  text-transform: uppercase;
 
-    &:hover {
-      background: ${(props) => props.theme['yellow-dark']};
-    }
+  transition: background ease 300ms;
+
+  &:hover {
+    background: ${(props) => props.theme['yellow-dark']};
   }
 `
