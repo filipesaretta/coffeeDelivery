@@ -51,9 +51,7 @@ export function Home() {
       </HomeContainer>
       <Catalog>
         {storeItems.map((item) => (
-          <div key={item.id}>
-            <CardItem {...item} />
-          </div>
+          <CardItem items={item} key={item.id} />
         ))}
       </Catalog>
     </>
