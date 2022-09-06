@@ -5,8 +5,11 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { OrderSummaryCard } from '../../components/OrderSummaryCard'
+import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import {
   Form,
   FormAdress,
@@ -16,17 +19,42 @@ import {
   Title,
 } from './styles'
 
+interface AddressDetailsProps {
+  bairro: string
+  cep: string
+  cidade: string
+  complemento: string
+  numero: string
+  payment: string
+  rua: string
+  uf: string
+}
+
 export function Checkout() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm()
+  } = useForm<AddressDetailsProps>()
+  const navigate = useNavigate()
+  const [payment, setPayment] = useState('')
 
-  const onSubmit = (data: any) => console.log(data)
+  const { handleAddress } = useShoppingCartContext()
 
-  console.log(watch('cep')) // watch input value by passing the name of it
+  const onSubmit = (data: AddressDetailsProps) => {
+    const deliveryData = {
+      bairro: data.bairro,
+      cep: data.cep,
+      cidade: data.cidade,
+      complemento: data.complemento,
+      numero: data.numero,
+      payment,
+      rua: data.rua,
+      uf: data.uf,
+    }
+    handleAddress(deliveryData)
+    navigate('/success')
+  }
 
   return (
     <>
@@ -44,15 +72,13 @@ export function Checkout() {
                 <p>Informe o endereço onde deseja receber seu pedido</p>
               </div>
             </Title>
-            <input
-              name="cep"
-              placeholder="CEP"
-              {...(register('cep'), { required: true })}
-            />
+
+            <input placeholder="CEP" {...register('cep', { required: true })} />
             {errors.cep && <span>This field is required</span>}
 
             <input placeholder="Rua" {...register('rua', { required: true })} />
             {errors.rua && <span>This field is required</span>}
+
             <div className="two-inputs">
               <input
                 placeholder="Número"
@@ -88,15 +114,21 @@ export function Checkout() {
               </div>
             </Title>
             <PaymentSelection>
-              <button type="button">
+              <button
+                type="button"
+                onClick={() => setPayment('Cartão de Crédito')}
+              >
                 <CreditCard size={22} weight="regular" color="#8047F8" />
                 <span> Cartão de crédito</span>
               </button>
-              <button type="button">
+              <button
+                type="button"
+                onClick={() => setPayment('Cartão de Débito')}
+              >
                 <Bank size={22} weight="regular" color="#8047F8" />
                 <span>Cartão de débito</span>
               </button>
-              <button type="button">
+              <button type="button" onClick={() => setPayment('Dinheiro')}>
                 <Money size={22} weight="regular" color="#8047F8" />
                 <span>Dinheiro</span>
               </button>
@@ -104,8 +136,6 @@ export function Checkout() {
           </FormPayment>
 
           <OrderSummaryCard />
-
-          {/* <input type="submit" /> */}
         </Form>
       </FormContainer>
     </>

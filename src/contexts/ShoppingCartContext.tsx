@@ -8,6 +8,16 @@ interface CartItemsProps {
   id: number
   quantity: number
 }
+interface AddressDetailsProps {
+  bairro: string
+  cep: string
+  cidade: string
+  complemento: string
+  numero: string
+  payment: string
+  rua: string
+  uf: string
+}
 
 interface ShoppingCartContextProps {
   getItemQuantity: (id: number) => number
@@ -16,6 +26,8 @@ interface ShoppingCartContextProps {
   removeItem: (id: number) => void
   cartSize: () => number
   cartItems: CartItemsProps[]
+  handleAddress: (deliveryData: AddressDetailsProps) => void
+  getAddress: () => AddressDetailsProps
 }
 
 const ShoppingCartContext = createContext({} as ShoppingCartContextProps)
@@ -26,6 +38,17 @@ export function useShoppingCartContext() {
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItemsProps[]>([])
+  const [address, setAddress] = useState<AddressDetailsProps>(
+    {} as AddressDetailsProps,
+  )
+
+  function handleAddress(deliveryData: AddressDetailsProps) {
+    setAddress(deliveryData)
+  }
+
+  function getAddress() {
+    return address
+  }
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0
@@ -52,6 +75,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
       }
     })
   }
+
   function decreaseItemsQuantity(id: number) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id)?.quantity === 1) {
@@ -76,12 +100,14 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   return (
     <ShoppingCartContext.Provider
       value={{
+        handleAddress,
         getItemQuantity,
         increaseItemsQuantity,
         decreaseItemsQuantity,
         removeItem,
         cartSize,
         cartItems,
+        getAddress,
       }}
     >
       {children}
