@@ -6,6 +6,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 6.5rem;
+  padding: 0 1rem;
 `
 
 export const MapCartContainer = styled.div`
