@@ -37,7 +37,7 @@ export function Checkout() {
     formState: { errors },
   } = useForm<AddressDetailsProps>()
   const navigate = useNavigate()
-  const [payment, setPayment] = useState('')
+  const [payment, setPayment] = useState('Dinheiro')
 
   const { handleAddress } = useShoppingCartContext()
 
@@ -73,14 +73,26 @@ export function Checkout() {
               </div>
             </Title>
 
-            <input placeholder="CEP" {...register('cep', { required: true })} />
-            {errors.cep && <span>This field is required</span>}
+            <input
+              placeholder="CEP"
+              {...register('cep', {
+                required: true,
+                pattern: /^[0-9]{5}-[0-9]{3}$/,
+              })}
+            />
+            {errors.cep && errors.cep.type === 'required' && (
+              <span>This field is required</span>
+            )}
+            {errors.cep && errors.cep.type === 'pattern' && (
+              <span> CEP is invalid ex: 12345-678 </span>
+            )}
 
             <input placeholder="Rua" {...register('rua', { required: true })} />
             {errors.rua && <span>This field is required</span>}
 
             <div className="two-inputs">
               <input
+                type="number"
                 placeholder="Número"
                 {...register('numero', { required: true })}
               />
@@ -109,7 +121,7 @@ export function Checkout() {
                 <p>Pagamento</p>
                 <p>
                   O pagamento é feito na entrega. Escolha a forma que deseja
-                  pagar
+                  pagar.
                 </p>
               </div>
             </Title>

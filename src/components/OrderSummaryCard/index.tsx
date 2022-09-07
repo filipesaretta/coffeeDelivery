@@ -4,6 +4,7 @@ import { CartItems } from '../CartItems'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import storeItems from '../../data/storeItems.json'
 import { moneyFormatter } from '../../utils/moneyFormatter'
+import { useNavigate } from 'react-router-dom'
 export function OrderSummaryCard() {
   const { cartItems } = useShoppingCartContext()
 
@@ -12,15 +13,19 @@ export function OrderSummaryCard() {
 
     return total + Number(item?.price || 0) * cartItem.quantity
   }, 0)
+  console.log(!!cartItems)
+  const navigate = useNavigate()
 
   const shipping = 3.5
   const TotalAll = moneyFormatter(Number(totalItemsPrice + shipping))
 
   return (
     <OrderSummaryContainer>
-      {cartItems.map((item) => {
-        return <CartItems {...item} key={item.id} />
-      })}
+      <>
+        {cartItems.length !== 0
+          ? cartItems.map((item) => <CartItems {...item} key={item.id} />)
+          : navigate('/')}
+      </>
 
       <OrderSummary>
         <table>
