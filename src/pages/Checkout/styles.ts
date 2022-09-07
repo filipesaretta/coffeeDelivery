@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const FormContainer = styled.div`
-  /* width: 640px; */
+  padding: 0 1rem;
+  padding: 0 1rem;
 `
 
 export const Title = styled.div`
@@ -24,17 +25,21 @@ export const Form = styled.form`
   row-gap: 0.75rem;
   column-gap: 2rem;
   padding: 1rem 0 2.5rem 0;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr max-content;
 `
 
 export const FormAdress = styled.div`
   padding: 2.5rem;
   background-color: ${(props) => props.theme['base-card']};
   border-radius: 8px;
-
-  display: flex;
+  grid-column: 1 /-1;
+  display: grid;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: 900px) {
+    grid-column: 1;
+  }
 
   input {
     border: none;
@@ -43,11 +48,17 @@ export const FormAdress = styled.div`
 
     border-radius: 4px;
     padding: 0.75rem;
-
     &::placeholder {
       color: ${(props) => props.theme['base-label']};
     }
   }
+
+  & input + span {
+    margin-bottom: 0rem;
+    padding-left: 0.3rem;
+    color: ${(props) => props.theme.yellow};
+  }
+
   input[name='cep'] {
     width: 12.5rem;
   }
@@ -56,18 +67,30 @@ export const FormAdress = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    @media (min-width: 540px) {
-      grid-template-columns: 200px 1fr;
+    @media (min-width: 900px) {
+      grid-template-columns: minmax(100px, 200px) 1fr;
+    }
+
+    & span {
+      grid-row: 2;
+      padding-left: 0.3rem;
+      color: ${(props) => props.theme.yellow};
     }
   }
 
   .three-inputs {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
 
-    @media (min-width: 640px) {
-      grid-template-columns: 200px 1fr 60px;
+    gap: 1rem;
+    & span {
+      grid-row: 2;
+      padding-left: 0.3rem;
+      color: ${(props) => props.theme.yellow};
+    }
+
+    @media (min-width: 1060px) {
+      grid-template-columns: minmax(100px, 200px) 1fr 60px;
     }
   }
 `
@@ -81,12 +104,20 @@ export const FormPayment = styled.div`
   flex-direction: column;
   gap: 1rem;
   grid-row: 2;
+  grid-column: 1 / -1;
+  @media (min-width: 900px) {
+    grid-column: 1;
+  }
 `
 
 export const PaymentSelection = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   button {
     display: flex;

@@ -57,99 +57,96 @@ export function Checkout() {
   }
 
   return (
-    <>
+    <FormContainer>
       <h1>Complete seu pedido</h1>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <FormAdress>
+          <Title>
+            <span>
+              <MapPinLine size={22} weight="regular" color="#C47F17" />
+            </span>
+            <div>
+              <p>Endereço de Entrega</p>
+              <p>Informe o endereço onde deseja receber seu pedido</p>
+            </div>
+          </Title>
 
-      <FormContainer>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <FormAdress>
-            <Title>
-              <span>
-                <MapPinLine size={22} weight="regular" color="#C47F17" />
-              </span>
-              <div>
-                <p>Endereço de Entrega</p>
-                <p>Informe o endereço onde deseja receber seu pedido</p>
-              </div>
-            </Title>
+          <input
+            placeholder="CEP"
+            {...register('cep', {
+              required: true,
+              pattern: /^[0-9]{5}-[0-9]{3}$/,
+            })}
+          />
+          {errors.cep && errors.cep.type === 'required' && (
+            <span>This field is required</span>
+          )}
+          {errors.cep && errors.cep.type === 'pattern' && (
+            <span> CEP is invalid ex: 12345-678 </span>
+          )}
 
+          <input placeholder="Rua" {...register('rua', { required: true })} />
+          {errors.rua && <span>This field is required</span>}
+
+          <div className="two-inputs">
             <input
-              placeholder="CEP"
-              {...register('cep', {
-                required: true,
-                pattern: /^[0-9]{5}-[0-9]{3}$/,
-              })}
+              type="number"
+              placeholder="Número"
+              {...register('numero', { required: true })}
             />
-            {errors.cep && errors.cep.type === 'required' && (
-              <span>This field is required</span>
-            )}
-            {errors.cep && errors.cep.type === 'pattern' && (
-              <span> CEP is invalid ex: 12345-678 </span>
-            )}
+            {errors.numero && <span>This field is required</span>}
+            <input placeholder="Complemento" {...register('complemento')} />
+          </div>
+          <div className="three-inputs">
+            <input
+              placeholder="Bairro"
+              {...register('bairro', { required: true })}
+            />
+            {errors.bairro && <span>This field is required</span>}
+            <input placeholder="Cidade" {...register('cidade')} />
+            {errors.cidade && <span>This field is required</span>}
+            <input placeholder="UF" {...register('uf')} />
+            {errors.uf && <span>This field is required</span>}
+          </div>
+        </FormAdress>
 
-            <input placeholder="Rua" {...register('rua', { required: true })} />
-            {errors.rua && <span>This field is required</span>}
-
-            <div className="two-inputs">
-              <input
-                type="number"
-                placeholder="Número"
-                {...register('numero', { required: true })}
-              />
-              {errors.numero && <span>This field is required</span>}
-              <input placeholder="Complemento" {...register('complemento')} />
+        <FormPayment>
+          <Title>
+            <span>
+              <CurrencyDollar size={22} weight="regular" color="#8047F8" />
+            </span>
+            <div>
+              <p>Pagamento</p>
+              <p>
+                O pagamento é feito na entrega. Escolha a forma que deseja
+                pagar.
+              </p>
             </div>
-            <div className="three-inputs">
-              <input
-                placeholder="Bairro"
-                {...register('bairro', { required: true })}
-              />
-              {errors.bairro && <span>This field is required</span>}
-              <input placeholder="Cidade" {...register('cidade')} />
-              {errors.cidade && <span>This field is required</span>}
-              <input placeholder="UF" {...register('uf')} />
-              {errors.uf && <span>This field is required</span>}
-            </div>
-          </FormAdress>
+          </Title>
+          <PaymentSelection>
+            <button
+              type="button"
+              onClick={() => setPayment('Cartão de Crédito')}
+            >
+              <CreditCard size={22} weight="regular" color="#8047F8" />
+              <span> Cartão de crédito</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setPayment('Cartão de Débito')}
+            >
+              <Bank size={22} weight="regular" color="#8047F8" />
+              <span>Cartão de débito</span>
+            </button>
+            <button type="button" onClick={() => setPayment('Dinheiro')}>
+              <Money size={22} weight="regular" color="#8047F8" />
+              <span>Dinheiro</span>
+            </button>
+          </PaymentSelection>
+        </FormPayment>
 
-          <FormPayment>
-            <Title>
-              <span>
-                <CurrencyDollar size={22} weight="regular" color="#8047F8" />
-              </span>
-              <div>
-                <p>Pagamento</p>
-                <p>
-                  O pagamento é feito na entrega. Escolha a forma que deseja
-                  pagar.
-                </p>
-              </div>
-            </Title>
-            <PaymentSelection>
-              <button
-                type="button"
-                onClick={() => setPayment('Cartão de Crédito')}
-              >
-                <CreditCard size={22} weight="regular" color="#8047F8" />
-                <span> Cartão de crédito</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setPayment('Cartão de Débito')}
-              >
-                <Bank size={22} weight="regular" color="#8047F8" />
-                <span>Cartão de débito</span>
-              </button>
-              <button type="button" onClick={() => setPayment('Dinheiro')}>
-                <Money size={22} weight="regular" color="#8047F8" />
-                <span>Dinheiro</span>
-              </button>
-            </PaymentSelection>
-          </FormPayment>
-
-          <OrderSummaryCard />
-        </Form>
-      </FormContainer>
-    </>
+        <OrderSummaryCard />
+      </Form>
+    </FormContainer>
   )
 }
