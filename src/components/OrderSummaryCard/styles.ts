@@ -7,6 +7,13 @@ export const OrderSummaryContainer = styled.div`
   border-top-right-radius: 44px;
   border-bottom-left-radius: 44px;
   display: grid;
+  align-self: baseline;
+  grid-column: 1 / -1;
+  grid-row: 3;
+  @media (min-width: 900px) {
+    grid-column: 2;
+    grid-row: 1;
+  }
 `
 
 export const OrderSummary = styled.div`

@@ -2,14 +2,21 @@ import styled from 'styled-components'
 
 export const HomeContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: 1fr;
+  justify-content: center;
   align-items: center;
   gap: 3.5rem;
   margin-top: 3.875rem;
+  padding: 0 1rem;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr max-content;
+  }
 
   img {
     max-width: 100%;
     height: auto;
+    justify-self: center;
   }
 `
 
@@ -73,10 +80,20 @@ export const Features = styled.div`
 `
 
 export const Catalog = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  justify-items: center;
   gap: 2rem;
   padding: 2rem 0;
+
+  @media (min-width: 568px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: 1160px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `
