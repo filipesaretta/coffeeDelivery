@@ -1,6 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
-import { DeliveryContainer, AddressContainer, Title } from './styles'
+import { DeliveryContainer, AddressContainer, Title, Details } from './styles'
 
 import illustration from '../../assets/img/Illustration.svg'
 
@@ -15,37 +15,44 @@ export function Success() {
         <p>Agora é só aguardar que logo o café chegará até você</p>
       </Title>
       <AddressContainer>
-        <div>
+        <Details>
           <span className="location">
             <MapPin size={16} weight="fill" />
           </span>
-          <p>
-            Entrega em{' '}
-            <b>
-              {rua}, {numero}
-            </b>
-          </p>
-          <p>
-            {bairro} - {cidade}, {uf}
-          </p>
-        </div>
-        <div>
+          <div>
+            <p>
+              Entrega em{' '}
+              <b>
+                {rua}, {numero}
+              </b>
+            </p>
+            <p>
+              {bairro} - {cidade}, {uf}
+            </p>
+          </div>
+        </Details>
+        <Details>
           <span className="timer">
             <Timer size={16} weight="fill" />
           </span>
-          <p>
-            Previsão de entrega <b>20 min - 30 min</b>
-          </p>
-        </div>
-        <div>
+          <div>
+            <p>Previsão de entrega</p>
+            <p>
+              <b>20 min - 30 min</b>
+            </p>
+          </div>
+        </Details>
+        <Details>
           <span className="money">
             <CurrencyDollar size={16} />
           </span>
-          <p>Pagamento na entrega</p>
-          <p>
-            <b>{payment}</b>
-          </p>
-        </div>
+          <div>
+            <p>Pagamento na entrega</p>
+            <p>
+              <b>{payment}</b>
+            </p>
+          </div>
+        </Details>
       </AddressContainer>
       <img src={illustration} alt="" />
     </DeliveryContainer>

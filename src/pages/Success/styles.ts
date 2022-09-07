@@ -2,9 +2,14 @@ import styled from 'styled-components'
 
 export const DeliveryContainer = styled.div`
   display: grid;
-  grid-template-columns: minmax(320px, 526px) max-content;
-  justify-content: space-between;
+  grid-template-columns: minmax(320px, 526px);
+  justify-content: center;
   row-gap: 2.4rem;
+  padding: 0 1rem;
+  @media (min-width: 900px) {
+    justify-content: space-between;
+    grid-template-columns: minmax(320px, 526px) max-content;
+  }
 `
 
 export const Title = styled.div`
@@ -32,30 +37,33 @@ export const AddressContainer = styled.div`
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
+`
 
+export const Details = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   div {
     display: flex;
+    flex-direction: column;
+  }
+  span {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.75rem;
+    color: ${(props) => props.theme.white};
+    min-height: 2rem;
+    min-width: 2rem;
+    border-radius: 100%;
 
-    span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: ${(props) => props.theme.white};
-      min-height: 2rem;
-      min-width: 2rem;
-      border-radius: 100%;
-
-      &.location {
-        background-color: ${(props) => props.theme.purple};
-      }
-      &.timer {
-        background-color: ${(props) => props.theme.yellow};
-      }
-      &.money {
-        background-color: ${(props) => props.theme['yellow-dark']};
-      }
+    &.location {
+      background-color: ${(props) => props.theme.purple};
+    }
+    &.timer {
+      background-color: ${(props) => props.theme.yellow};
+    }
+    &.money {
+      background-color: ${(props) => props.theme['yellow-dark']};
     }
   }
 `
