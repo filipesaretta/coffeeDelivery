@@ -12,6 +12,7 @@ import {
 
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
+import { moneyFormatter } from '../../utils/moneyFormatter'
 
 interface CoffeeItemsProps {
   items: {
@@ -47,7 +48,7 @@ export function CardItem({
       </CoffeeTitle>
       <BuySection>
         <p>
-          R$ <span>{price}</span>
+          <span>{moneyFormatter(price)}</span>
         </p>
         <AddToCart>
           <CounterCoffee>
