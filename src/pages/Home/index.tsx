@@ -11,10 +11,12 @@ export function Home() {
       <HomeContainer>
         <HomeDetails>
           <Title>
-            <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+            <h1>
+              Trovi il caffè perfetto per te in qualsiasi orari del giorno
+            </h1>
             <p>
-              Com o Coffee DeVlivery você recebe seu café onde estiver, a
-              qualquer hora.
+              Con il coffe delivery puoi ricevere il suo caffè dove vuole e
+              quando vuole
             </p>
           </Title>
           <Features>
@@ -22,25 +24,25 @@ export function Home() {
               <span className="cart">
                 <ShoppingCart width={16} weight="fill" />
               </span>
-              Compra simples e segura
+              Acquisto semplice e sicuro
             </p>
             <p>
               <span className="timer">
                 <Timer width={16} weight="fill" />
               </span>
-              Entrega rápida e rastreada
+              Consegna rapida e tracciata
             </p>
             <p>
               <span className="package">
                 <Package width={16} weight="fill" />
               </span>
-              Embalagem mantém o café intacto
+              Imballaggio mantieni il caffè intatto
             </p>
             <p>
               <span className="coffee">
                 <Coffee width={16} weight="fill" />
               </span>
-              O café chega fresquinho até você
+              Il caffè arriva fresco fino a te!
             </p>
           </Features>
         </HomeDetails>
