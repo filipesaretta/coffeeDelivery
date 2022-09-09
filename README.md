@@ -7,8 +7,8 @@
 </p>
 
 ## Project
-
-<!-- ![github-search](./src/assets/github-search.gif) -->
+Live here: https://coffee-delivery-mk0eq4auj-filipesaretta.vercel.app
+![coffe-delivery](./src/assets/img/view.png)
 
 ## Tech
 
