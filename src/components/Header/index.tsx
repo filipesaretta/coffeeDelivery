@@ -6,7 +6,6 @@ import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 
 export function Header() {
   const { cartSize } = useShoppingCartContext()
-  console.log(cartSize())
   return (
     <HeaderContainer>
       <div>

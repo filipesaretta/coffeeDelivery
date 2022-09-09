@@ -13,7 +13,6 @@ export function OrderSummaryCard() {
 
     return total + Number(item?.price || 0) * cartItem.quantity
   }, 0)
-  console.log(!!cartItems)
   const navigate = useNavigate()
 
   const shipping = 3.5
