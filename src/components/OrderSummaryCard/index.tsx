@@ -31,9 +31,9 @@ export function OrderSummaryCard() {
         <table>
           <thead>
             <tr>
-              <th>Total de itens</th>
-              <th>Entrega</th>
-              <th>Total</th>
+              <th>Totale Caffè</th>
+              <th>Consegna</th>
+              <th>Totale</th>
             </tr>
           </thead>
           <tbody>
@@ -44,7 +44,7 @@ export function OrderSummaryCard() {
             </tr>
           </tbody>
         </table>
-        <ConfirmButton>confirmar pedido</ConfirmButton>
+        <ConfirmButton>Confermare la Richiesta</ConfirmButton>
       </OrderSummary>
     </OrderSummaryContainer>
   )

@@ -11,8 +11,8 @@ export function Success() {
   return (
     <DeliveryContainer>
       <Title>
-        <h1>Pedido Confirmado</h1>
-        <p>Agora é só aguardar que logo o café chegará até você</p>
+        <h1>Richiesta Confermata</h1>
+        <p>Adesso tra pochi minuti il tuo caffè arriverà</p>
       </Title>
       <AddressContainer>
         <Details>
@@ -21,7 +21,7 @@ export function Success() {
           </span>
           <div>
             <p>
-              Entrega em{' '}
+              Consegna{' '}
               <b>
                 {rua}, {numero}
               </b>
@@ -36,7 +36,7 @@ export function Success() {
             <Timer size={16} weight="fill" />
           </span>
           <div>
-            <p>Previsão de entrega</p>
+            <p>Previsione di Consegna</p>
             <p>
               <b>20 min - 30 min</b>
             </p>
@@ -47,7 +47,7 @@ export function Success() {
             <CurrencyDollar size={16} />
           </span>
           <div>
-            <p>Pagamento na entrega</p>
+            <p>Pagamento alla consegna</p>
             <p>
               <b>{payment}</b>
             </p>

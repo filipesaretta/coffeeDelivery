@@ -2,151 +2,108 @@
   {
     "id": 1,
     "image": "/src/assets/img/expresso.png",
-    "name": "Expresso Tradicional",
-    "description": "O tradicional café feito com água quente e grãos moídos",
+    "name": "Espresso Tradizionale",
+    "description": "Una tazzina con una bevanda aromatica che ferma il mondo circostante per un momento di piacere",
     "price": 1.25,
     "tags": [
-      "Tradicional"
+      "Tradizionale"
     ]
   },
   {
     "id": 2,
     "image": "/src/assets/img/americano.png",
-    "name": "Expresso Americano",
-    "description": "Expresso diluído, menos intenso que o tradicional",
+    "name": "Espresso Americano",
+    "description": "Espresso diluito, meno intenso del tradizionale",
     "price": 1.25,
     "tags": [
-      "Tradicional"
+      "Tradizionale"
     ]
   },
   {
     "id": 3,
     "image": "/src/assets/img/expresso-cremoso.png",
-    "name": "Expresso Cremoso",
-    "description": "Café expresso tradicional com espuma cremosa",
+    "name": "Espresso Cremoso",
+    "description": "Espresso Tradizionale, con schiuma cremosa",
     "price": 1.25,
     "tags": [
-      "Tradicional"
+      "Tradizionale"
     ]
   },
   {
     "id": 4,
     "image": "/src/assets/img/cafe-gelado.png",
-    "name": "Expresso Gelado",
-    "description": "Bebida preparada com café expresso e cubos de gelo",
+    "name": "Espresso Freddo",
+    "description": "Caffè espresso con cubetti di ghiaccio",
     "price": 2.25,
     "tags": [
-      "Tradicional",
-      "Gelado"
+      "Tradizionale",
+      "Freddo"
     ]
   },
   {
     "id": 5,
     "image": "/src/assets/img/cafe-com-leite.png",
-    "name": "Café com Leite",
-    "description": "Meio a meio de expresso tradicional com leite vaporizado",
+    "name": "Caffè e latte",
+    "description": "Espresso Tradizionale con latte",
     "price": 1.25,
     "tags": [
-      "Tradicional",
-      "Com Leite"
+      "Tradizionale",
+      "Con Latte"
     ]
   },
   {
     "id": 6,
     "image": "/src/assets/img/latte.png",
     "name": "Latte",
-    "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+    "description": "Una dose di caffè espresso con il doppio latte e schiuma cremosa",
     "price": 1.25,
     "tags": [
-      "Tradicional",
-      "Com Leite"
+      "Tradizionale",
+      "Con Latte"
     ]
   },
   {
     "id": 7,
     "image": "/src/assets/img/cappuccino.png",
-    "name": "Capuccino",
-    "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+    "name": "Cappuccino",
+    "description": "Composta da caffè e latte montato a vapore",
     "price": 1.25,
     "tags": [
-      "Tradicional",
-      "Com Leite"
+      "Tradizionale",
+      "Con Latte"
     ]
   },
   {
     "id": 8,
     "image": "/src/assets/img/macchiato.png",
     "name": "Macchiato",
-    "description": "Café expresso misturado com um pouco de leite quente e espuma",
+    "description": "Fatto con schiuma, latte cotto a vapore ed espresso.",
     "price": 1.25,
     "tags": [
-      "Tradicional",
-      "Com Leite"
+      "Tradizionale",
+      "Con Latte"
     ]
   },
   {
     "id": 9,
     "image": "/src/assets/img/mochaccino.png",
     "name": "Mocaccino",
-    "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+    "description": "Bevanda calda costituita da cappuccino, panna e cioccolata, con l'aggiunta di polvere di cacao",
     "price": 1.25,
     "tags": [
-      "Tradicional",
-      "Com Leite"
+      "Tradizionale",
+      "Con Latte"
     ]
   },
   {
     "id": 10,
     "image": "/src/assets/img/chocolate-quente.png",
-    "name": "Chocolate Quente",
-    "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+    "name": "Cioccolata Calda",
+    "description": "Cioccolata sciolta nel latte caldo e caffè",
     "price": 2.55,
     "tags": [
-      "Especial",
-      "Com Leite"
-    ]
-  },
-  {
-    "id": 11,
-    "image": "/src/assets/img/cubano.png",
-    "name": "Cubano",
-    "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
-    "price": 1.25,
-    "tags": [
-      "Especial",
-      "Alcoólico",
-      "Gelado"
-    ]
-  },
-  {
-    "id": 12,
-    "image": "/src/assets/img/havaiano.png",
-    "name": "Havaiano",
-    "description": "Bebida adocicada preparada com café e leite de coco",
-    "price": 1.25,
-    "tags": [
-      "Especial"
-    ]
-  },
-  {
-    "id": 13,
-    "image": "/src/assets/img/arabe.png",
-    "name": "Árabe",
-    "description": "Bebida preparada com grãos de café árabe e especiarias",
-    "price": 2.25,
-    "tags": [
-      "Especial"
-    ]
-  },
-  {
-    "id": 14,
-    "image": "/src/assets/img/irlandes.png",
-    "name": "Irlandês",
-    "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
-    "price": 1.25,
-    "tags": [
-      "Especial",
-      "Alcoólico"
+      "Speciale",
+      "Con Latte"
     ]
   }
 ]

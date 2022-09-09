@@ -58,7 +58,7 @@ export function Checkout() {
 
   return (
     <FormContainer>
-      <h1>Complete seu pedido</h1>
+      <h1>Carello</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <FormAdress>
           <Title>
@@ -66,47 +66,47 @@ export function Checkout() {
               <MapPinLine size={22} weight="regular" color="#C47F17" />
             </span>
             <div>
-              <p>Endereço de Entrega</p>
-              <p>Informe o endereço onde deseja receber seu pedido</p>
+              <p>Indirizzo</p>
+              <p>Inserisci l&apos;indirizzo dove vuoi ricevere il tuo caffè</p>
             </div>
           </Title>
 
           <input
-            placeholder="CEP"
+            placeholder="CAP"
             {...register('cep', {
               required: true,
-              pattern: /^[0-9]{5}-[0-9]{3}$/,
+              pattern: /^[0-9]{5}$/,
             })}
           />
           {errors.cep && errors.cep.type === 'required' && (
-            <span>This field is required</span>
+            <span>Questo campo è obbligatorio</span>
           )}
           {errors.cep && errors.cep.type === 'pattern' && (
-            <span> CEP is invalid ex: 12345-678 </span>
+            <span> CAP non è valido - es: 12345 </span>
           )}
 
-          <input placeholder="Rua" {...register('rua', { required: true })} />
-          {errors.rua && <span>This field is required</span>}
+          <input placeholder="Via" {...register('rua', { required: true })} />
+          {errors.rua && <span>Questo campo è obbligatorio</span>}
 
           <div className="two-inputs">
             <input
               type="number"
-              placeholder="Número"
+              placeholder="Numero"
               {...register('numero', { required: true })}
             />
-            {errors.numero && <span>This field is required</span>}
+            {errors.numero && <span>Questo campo è obbligatorio</span>}
             <input placeholder="Complemento" {...register('complemento')} />
           </div>
           <div className="three-inputs">
             <input
-              placeholder="Bairro"
+              placeholder="Quartiere"
               {...register('bairro', { required: true })}
             />
-            {errors.bairro && <span>This field is required</span>}
-            <input placeholder="Cidade" {...register('cidade')} />
-            {errors.cidade && <span>This field is required</span>}
-            <input placeholder="UF" {...register('uf')} />
-            {errors.uf && <span>This field is required</span>}
+            {errors.bairro && <span>Questo campo è obbligatorio</span>}
+            <input placeholder="Città" {...register('cidade')} />
+            {errors.cidade && <span>Questo campo è obbligatorio</span>}
+            <input placeholder="Targa" {...register('uf')} />
+            {errors.uf && <span>Questo campo è obbligatorio</span>}
           </div>
         </FormAdress>
 
@@ -118,8 +118,8 @@ export function Checkout() {
             <div>
               <p>Pagamento</p>
               <p>
-                O pagamento é feito na entrega. Escolha a forma que deseja
-                pagar.
+                Il pagamento è fatto nella consegna. Sceglie la forma in cui
+                vuoi pagare:
               </p>
             </div>
           </Title>
@@ -129,18 +129,18 @@ export function Checkout() {
               onClick={() => setPayment('Cartão de Crédito')}
             >
               <CreditCard size={22} weight="regular" color="#8047F8" />
-              <span> Cartão de crédito</span>
+              <span> Cata di credito</span>
             </button>
             <button
               type="button"
               onClick={() => setPayment('Cartão de Débito')}
             >
               <Bank size={22} weight="regular" color="#8047F8" />
-              <span>Cartão de débito</span>
+              <span>Carta di debito</span>
             </button>
             <button type="button" onClick={() => setPayment('Dinheiro')}>
               <Money size={22} weight="regular" color="#8047F8" />
-              <span>Dinheiro</span>
+              <span>Soldi</span>
             </button>
           </PaymentSelection>
         </FormPayment>
