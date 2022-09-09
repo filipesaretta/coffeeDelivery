@@ -3,7 +3,7 @@ import { Catalog, Features, HomeContainer, HomeDetails, Title } from './styles'
 import coffeMainImage from '../../assets/img/cofee-image-home.png'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 import { CardItem } from '../../components/CardItem'
-import storeItems from '../../data/storeItems.json'
+import storeItems from '../../data/storeItems'
 
 export function Home() {
   return (
@@ -15,8 +15,8 @@ export function Home() {
               Trovi il caffè perfetto per te in qualsiasi orari del giorno
             </h1>
             <p>
-              Con il coffe delivery puoi ricevere il suo caffè dove vuole e
-              quando vuole
+              Con il coffee delivery puoi ricevere il tuo caffè dove vuoi e
+              quando vuoi
             </p>
           </Title>
           <Features>
@@ -42,7 +42,7 @@ export function Home() {
               <span className="coffee">
                 <Coffee width={16} weight="fill" />
               </span>
-              Il caffè arriva fresco fino a te!
+              Il caffè arriva caldo fino a te!
             </p>
           </Features>
         </HomeDetails>

@@ -140,7 +140,7 @@ export function Checkout() {
             </button>
             <button type="button" onClick={() => setPayment('Dinheiro')}>
               <Money size={22} weight="regular" color="#8047F8" />
-              <span>Soldi</span>
+              <span>Contanti</span>
             </button>
           </PaymentSelection>
         </FormPayment>
