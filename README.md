@@ -7,7 +7,7 @@
 </p>
 
 ## Project
-Live here: https://coffee-delivery-mk0eq4auj-filipesaretta.vercel.app
+Live here: https://coffee-delivery-filipesaretta.vercel.app/
 ![coffe-delivery](./src/assets/img/view.png)
 
 ## Tech
