@@ -13,6 +13,7 @@ import {
 import { Minus, Plus, ShoppingCartSimple } from 'phosphor-react'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { moneyFormatter } from '../../utils/moneyFormatter'
+import { Link } from 'react-router-dom'
 
 interface CoffeeItemsProps {
   items: {
@@ -28,8 +29,12 @@ interface CoffeeItemsProps {
 export function CardItem({
   items: { id, name, description, image, price, tags },
 }: CoffeeItemsProps) {
-  const { getItemQuantity, decreaseItemsQuantity, increaseItemsQuantity } =
-    useShoppingCartContext()
+  const {
+    getItemQuantity,
+    decreaseItemsQuantity,
+    increaseItemsQuantity,
+    cartSize,
+  } = useShoppingCartContext()
 
   const quantity = getItemQuantity(id)
   return (
@@ -64,9 +69,15 @@ export function CardItem({
               onClick={() => increaseItemsQuantity(id)}
             />
           </CounterCoffee>
-          <Cart onClick={() => increaseItemsQuantity(id)}>
-            <ShoppingCartSimple size={22} weight="fill" />
-          </Cart>
+
+          <Link
+            to={cartSize() !== 0 ? '/checkout' : '/'}
+            onClick={() => (cartSize() !== 0 ? '' : increaseItemsQuantity(id))}
+          >
+            <Cart>
+              <ShoppingCartSimple size={22} weight="fill" />
+            </Cart>
+          </Link>
         </AddToCart>
       </BuySection>
     </CardContainer>

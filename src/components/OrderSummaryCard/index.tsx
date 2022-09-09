@@ -2,7 +2,7 @@ import { ConfirmButton, OrderSummary, OrderSummaryContainer } from './styles'
 
 import { CartItems } from '../CartItems'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
-import storeItems from '../../data/storeItems.json'
+import storeItems from '../../data/storeItems'
 import { moneyFormatter } from '../../utils/moneyFormatter'
 import { useNavigate } from 'react-router-dom'
 export function OrderSummaryCard() {

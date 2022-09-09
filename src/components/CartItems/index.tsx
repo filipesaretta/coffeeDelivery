@@ -1,7 +1,7 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 import { Price, CartItemsContainer, Items, Quantity } from './styles'
 
-import storeItems from '../../data/storeItems.json'
+import storeItems from '../../data/storeItems'
 import { useShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { moneyFormatter } from '../../utils/moneyFormatter'
 
@@ -46,7 +46,7 @@ export function CartItems({ id, quantity }: CartItemsProps) {
                 </div>
                 <button onClick={() => removeItem(item.id)}>
                   <Trash size={14} weight="regular" />
-                  <span>Remover</span>
+                  <span>Rimuovere</span>
                 </button>
               </Quantity>
             </Items>

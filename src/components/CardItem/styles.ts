@@ -82,6 +82,7 @@ export const AddToCart = styled.div`
 
 export const Cart = styled(button)`
   background-color: ${(props) => props.theme['purple-dark']};
+
   color: ${(props) => props.theme.white};
 `
 export const CounterCoffee = styled.div`
