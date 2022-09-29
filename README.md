@@ -21,9 +21,9 @@ Live here: https://coffee-delivery-filipesaretta.vercel.app/
 Clone the project and access the folder.
 
 ```
-git clone https://github.com/filipesaretta/coffeeDelivey
+git clone https://github.com/filipesaretta/coffeeDelivery
 
-cd search-dev-github
+cd coffeeDelivery
 ```
 
 Install the dependencies and start.
